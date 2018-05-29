@@ -5847,12 +5847,14 @@ function AppViewModel() {
     this.fileInfo = ko.observable();
     this.xyzCoordinates = ko.observable("");
     this.loader = ko.observable("");
+    this.resError = ko.observable("");
     this.clearData = function (model, e) {
         e.preventDefault();
         _this.reader.abort();
         _this.xyzCoordinates("");
         _this.fileInfo("");
         _this.fileInvalid("");
+        _this.resError("");
     };
     this.acceptDrop = function (model, e) {
         var files = e.dataTransfer.files;
@@ -5861,7 +5863,7 @@ function AppViewModel() {
         reader.onload = function () {
             var text = reader.result.trim();
             app.vaildateFile(text);
-            app.fileInfo('remove ' + files[0].name);
+            app.fileInfo(files[0].name);
         };
         reader.onerror = function (event) {
             alert(event.target.error.name);
@@ -5901,6 +5903,8 @@ function AppViewModel() {
             return _this.xyzCoordinates(res.data);
         }).catch(function (err) {
             console.log(err);
+            _this.loader(false);
+            _this.resError(true);
         });
     };
 

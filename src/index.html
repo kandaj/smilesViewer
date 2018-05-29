@@ -36,6 +36,11 @@
             </div>
         </div>
         <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-10" data-bind="visible: resError">
+                <p class="alert alert-danger text-center" role="alert">
+                    Oops something went wrong!. check SMILES string
+                </p>
+            </div>
             <div class="col-md-10 col-lg-10" data-bind="visible: fileInvalid">
                 <p class="alert alert-danger text-center" role="alert">
                     File is Invalid!.

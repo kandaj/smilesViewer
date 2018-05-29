@@ -4,12 +4,15 @@ function AppViewModel() {
     this.fileInfo = ko.observable();
     this.xyzCoordinates = ko.observable("");
     this.loader = ko.observable("");
+    this.resError =  ko.observable("");
     this.clearData = (model, e) => {
         e.preventDefault();
         this.reader.abort()
         this.xyzCoordinates("")
         this.fileInfo("")
         this.fileInvalid("")
+        this.resError("")
+
     }
     this.acceptDrop = (model, e) => {
         let files = e.dataTransfer.files;
@@ -18,7 +21,7 @@ function AppViewModel() {
         reader.onload = function () {
             let text = reader.result.trim();
             app.vaildateFile(text)
-            app.fileInfo('remove ' + files[0].name)
+            app.fileInfo(files[0].name)
         };
         reader.onerror = (event) => {
             alert(event.target.error.name);
@@ -62,6 +65,8 @@ function AppViewModel() {
             })
             .catch((err) => {
                 console.log(err)
+                this.loader(false)
+                this.resError(true)
             });
     }
 

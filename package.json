@@ -1,5 +1,5 @@
 {
-  "name": "chembl-test",
+  "name": "smiles-viewer",
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
