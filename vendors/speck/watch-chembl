@@ -1,0 +1,4 @@
+#!/bin/bash
+
+watchify src/chembl-main.js -t brfs -o static/3d-model-bundle.js -v
+

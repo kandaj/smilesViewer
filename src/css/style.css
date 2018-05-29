@@ -1,0 +1,67 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 50px;
+}
+
+
+.upload-drop-zone {
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 20px;
+    color: #ccc;
+    border-style: dashed;
+    border-color: #ccc;
+    font-size:30px;
+    background-color: #FFFFFF;
+    height:150px !important;
+}
+
+.upload-drop-zone.valid{
+    border-color: #28a745;
+    background-color: #e8f2e8;
+}
+
+.upload-drop-zone.invalid{
+    border-color: #CB444A;
+    background-color: #f9eaeb;
+}
+
+
+.upload-drop-zone p {
+    margin-top: -10px;
+}
+
+.upload-drop-zone button {
+    margin:-10px 0 0 20px;
+    font-size:18px;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active,
+.btn-outline-success.active {
+    color: red;
+    background-color: transparent;
+    background-image: none;
+    border-color: red;
+}
+
+#renderContainer{
+    margin:50px 0 0 75px;
+}
+#rendererCanvas {
+    width: 50%;
+    height: 50%;
+}
+
+#coordinates pre {
+    font-size:10px;
+}
+
+.card-header {
+    background-color: #327AF2;
+    color: #FFFFFF;
+}
